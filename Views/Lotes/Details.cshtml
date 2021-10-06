@@ -1,0 +1,64 @@
+﻿@model Gerenciamento_Empresas.Models.Lote
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Lote</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Regiao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Regiao.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cidade.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vacina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vacina.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">BacktoList</a> |
+    <a class="btn btn-primary text-light" id="elGenerateReport"> Gerar Relatorio</a>
+</div>
+<div>
+
+    <script src=" https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <script>
+        let elGenerateReport = document.querySelector('#elGenerateReport');
+        elGenerateReport.onclick = () => {
+            printJS({
+                printable: 'content',
+                type: 'html',
+                targetStyles: ['*']
+            })
+        }
+    </script>
+</div>

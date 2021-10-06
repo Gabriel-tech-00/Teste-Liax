@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gerenciamento_Empresas</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-dark bg-primary">
+            <div class="container">
+                <button class="navbar-toggler ml-3" data-toggle="collapse" data-target="#asideBar"
+                    aria-controls="asideBar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <h4 class="text-white text-uppercase">Teste Liax</h4>
+                </a>
+            </div>
+        </nav>
+        <aside class="collapse width float-left h-100 bg-dark text-white shadow-lg" id="asideBar">
+            <ul class="navbar-nav flex-grow-1">
+                <button class="btn btn-primary" data-toggle="collapse" data-target=".collapse.show.width">
+                    <i class="fas fa-times"></i>
+                    Fechar
+                </button>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-area="" asp-controller="Empresas" asp-action="Index">
+
+                        Empresas
+                    </a>
+                    <a class="nav-link text-white" asp-area="" asp-controller="Regiao" asp-action="Index">
+
+                        Regiao
+                    </a>
+                    <a class="nav-link text-white" asp-area="" asp-controller="Estados" asp-action="Index">
+
+                        Estados
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="Cidades" asp-action="Index">
+
+                        Cidade
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="Vacinas" asp-action="Index">
+
+                        Vacinas
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="Lotes" asp-action="Index">
+
+                        Lotes
+                    </a>
+                    <a class="nav-link text-white" asp-area="" asp-controller="Locais" asp-action="Index">
+
+                        Locais
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="Pessoas" asp-action="Index">
+
+                        Pessoas
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="PessoaVacinas" asp-action="Index">
+
+                        Pessoas Vacina
+                    </a>
+
+                    <a class="nav-link text-white" asp-area="" asp-controller="VacinaEmpresas" asp-action="Index">
+
+                        Empresas Vacina
+                    </a>
+                </li>
+                <ul>
+        </aside> 
+    </header>
+    <div class="container d-flex align-itens-center justify-content-center" id="content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
